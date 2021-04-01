@@ -1,29 +1,60 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
+import styled from 'styled-components'
 
-import Layout from "../components/layout"
+import Layout from '../components/layout'
+
 import SEO from "../components/seo"
 
+const ContentPage = styled.div`
+  padding:0;
+  display:grid;
+  grid-template-columns:1fr 2fr 1fr ;
+  grid-template-rows:1fr 2fr 1fr;
+  
+`
+
+
+const Title = styled.h1`
+  font-family:'Avenir' ,sans-serif;
+  color:white;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 4;
+  font-size:5rem;
+  z-index:3;
+  span{
+    color:violet;
+  }
+
+  p{
+    font-size:2rem;
+    grid-column-start:2;
+    grid-column-end:3;
+    grid-row-start:3;
+    grid-row-end:4;
+  }
+`
+
 const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <StaticImage
-      src="../images/gatsby-astronaut.png"
-      width={300}
-      quality={95}
-      formats={["AUTO", "WEBP", "AVIF"]}
-      alt="A Gatsby astronaut"
-      style={{ marginBottom: `1.45rem` }}
-    />
-    <p>
-      <Link to="/page-2/">Go to page 2</Link> <br />
-      <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-    </p>
-  </Layout>
+    <Layout>
+    <ContentPage>
+        <SEO title="Home" />
+        <StaticImage
+            src= '../images/bg.jpg'
+            layout='fullWidth'
+            quality={100}
+            style={{gridColumnStart:1 , gridColumnEnd:4 , gridRowStart:1 , gridRowEnd:4}}
+            transformOptions={{object:'cover',grayscale:true}}
+            />
+        <Title>The Material that Highlights<br></br>The <span>Beauty,</span><br></br>For Centuries
+        <p>from the best producers and companies in the world.</p>
+        </Title>
+      </ContentPage>
+    </Layout>
+ 
 )
 
 export default IndexPage

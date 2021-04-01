@@ -7,6 +7,14 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: ['Avenir', 'Droid Serif']
+        }
+      }
+    },
     `gatsby-plugin-mdx`,
     {
       resolve: `gatsby-plugin-styled-components`,
