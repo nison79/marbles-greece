@@ -3,12 +3,12 @@ import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import styled from 'styled-components'
 
-import Layout from '../components/layout'
 
 import SEO from "../components/seo"
 
 const ContentPage = styled.div`
   padding:0;
+  min-height:100vh;
   display:grid;
   grid-template-columns:1fr 2fr 1fr ;
   grid-template-rows:1fr 2fr 1fr;
@@ -26,6 +26,9 @@ const ContentPage = styled.div`
     font-size:3rem;
     @media(max-width:978px) {
     font-size:2rem;
+    }
+    @media(max-width:650px) {
+    font-size:1.2rem;
     }
     @media(min-width:1500px) {
     font-size:3rem;
@@ -110,12 +113,12 @@ const IndexPage = () => (
         <StaticImage
             src= '../images/bg.jpg'
             layout='constrained'
-            width={2500}
-            height={2000}
+            // width={2500}
+            // height={2000}
             quality={100}
             aspectRatio={4/3}
             style={{gridColumnStart:1 , gridColumnEnd:4 , gridRowStart:1 , gridRowEnd:4 ,zIndex:-1}}
-            transformOptions={{fit:"cover"}}
+            transformOptions={{fit:"fill"}}
             />
         <Title>The Material that Highlights<br></br>The <span>Beauty,</span><br></br>For Centuries.
         </Title>
