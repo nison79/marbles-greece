@@ -12,6 +12,9 @@ const ContentPage = styled.div`
   display:grid;
   grid-template-columns:1fr 2fr 1fr ;
   grid-template-rows:1fr 2fr 1fr;
+  @media(max-width:600px) {
+    grid-template-rows:1fr 300px 1fr;
+  }
   
   p{
     font-size:2rem;
@@ -36,11 +39,17 @@ const ContentPage = styled.div`
     grid-row-end:3; 
     align-self:end;
   }
-  @media(min-width:1900px) {
+  @media(min-width:1970px) {
     font-size:3rem;
     grid-row-start:2;
     grid-row-end:3; 
-    margin-bottom:12rem;
+    margin-bottom:10rem;
+  }
+  @media(min-width:2180px) {
+    font-size:3rem;
+    grid-row-start:2;
+    grid-row-end:3; 
+    margin-bottom:20rem;
   }
   }
 `
@@ -80,6 +89,10 @@ const Title = styled.h1`
   justify-self:start;
   padding:0;
   margin:0;
+  display:flex;
+  flex-direction:column;
+
+
   span{
     color:violet;
   }
@@ -100,6 +113,17 @@ const Title = styled.h1`
   }
 `
 
+const  StyledButton = styled.button`
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  width:100px;
+  height:50px;
+  align-self:center;
+  justify-self:center;
+`
+
 const IndexPage = () => (
     
     <ContentPage>
@@ -111,18 +135,19 @@ const IndexPage = () => (
           <h2>companies</h2>
         </Menu>
         <StaticImage
-            src= '../images/bg.jpg'
+            src= '../images/bg3.jpg'
             layout='constrained'
             // width={2500}
             // height={2000}
             quality={100}
-            aspectRatio={4/3}
             style={{gridColumnStart:1 , gridColumnEnd:4 , gridRowStart:1 , gridRowEnd:4 ,zIndex:-1}}
-            transformOptions={{fit:"fill"}}
+            transformOptions={{fit:"cover"}}
             />
-        <Title>The Material that Highlights<br></br>The <span>Beauty,</span><br></br>For Centuries.
+            
+        <Title>The Material that Highlights<br></br>The <span>Beauty,</span>For Centuries.
         </Title>
         <p>from the best producers and experts in the world.</p>
+        <StyledButton>Find Out</StyledButton>
       </ContentPage>
     
 
