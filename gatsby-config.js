@@ -11,7 +11,7 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Avenir', 'Droid Serif']
+          families: ['Avenir Condensed:200,300,400,500,700,800', 'Droid Serif']
         }
       }
     },
