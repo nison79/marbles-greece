@@ -11,9 +11,9 @@ const ContentPage = styled.div`
   min-height:100vh;
   display:grid;
   grid-template-columns:1fr 2fr 1fr ;
-  grid-template-rows:1fr 2fr 1fr;
+  grid-template-rows:250px 2fr 1fr;
   @media(max-width:800px) {
-    grid-template-rows:1fr 300px 1fr;
+    grid-template-rows:200px 300px 1fr;
   }
   
   p{
@@ -38,14 +38,14 @@ const ContentPage = styled.div`
     @media(min-width:658px) {
     font-size:1.2rem;
     align-self:end;
-    margin-top:10rem;
+    margin-bottom:0rem;
     grid-row-start:2;
     grid-row-end:3; 
     }
     @media(min-width:800px) {
-    font-size:2rem;
+    font-size:1.8rem;
     align-self:end;
-    margin-top:10rem;
+    margin-bottom:0rem;
     grid-row-start:2;
     grid-row-end:3; 
     }
@@ -54,7 +54,7 @@ const ContentPage = styled.div`
     grid-row-start:2;
     grid-row-end:3; 
     align-self:end;
-    margin-bottom:3rem;
+    margin-bottom:8rem;
     }
     @media(min-width:1200px) {
     font-size:2.9rem;
