@@ -7,6 +7,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
+ 
     {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
@@ -15,7 +16,6 @@ module.exports = {
         }
       }
     },
-    `gatsby-plugin-mdx`,
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {
@@ -50,7 +50,26 @@ module.exports = {
         path: `${__dirname}/src/pages`,
       },
     },
-    `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+          gatsbyRemarkPlugins: [
+            {
+              resolve: `gatsby-remark-images`,
+              options: {
+                maxWidth: 1000,
+              }
+            }
+          ]
+      },
+    },
+    {
+      resolve: `gatsby-transformer-sharp`,
+      options: {
+        // The option defaults to true
+        checkSupportedExtensions: false,
+      },
+    },
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,

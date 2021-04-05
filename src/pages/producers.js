@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link , graphql } from 'gatsby'
 
 const producers = () => {
   return (
@@ -8,5 +8,9 @@ const producers = () => {
     </div>
   )
 }
+
+// export const query = graphql`
+
+// `
 
 export default producers

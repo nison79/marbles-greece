@@ -235,7 +235,7 @@ const IndexPage = () => (
           <StyledLink to="/producers"><h2>producers</h2></StyledLink>
         </Menu>
         <StaticImage
-            src= '../images/bg3.jpg'
+            src= '../images/bg.jpg'
             layout='constrained'
             // width={2500}
             // height={2000}
